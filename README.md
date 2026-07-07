@@ -2,18 +2,18 @@
 
 This project is a simple DevOps deployment of a FastAPI application on EC2 using Docker Compose.
 
-## Technologies
+# Technologies
 
-- AWS EC2
-- Ubuntu
-- Docker
-- Docker Compose
-- FastAPI
-- NGINX
-- PostgreSQL
-- Redis
+AWS EC2
+Ubuntu
+Docker
+Docker Compose
+FastAPI
+NGINX
+PostgreSQL
+Redis
 
-## Project Structure
+# Project Structure
 
 ```
 app/
@@ -22,38 +22,20 @@ docker-compose.yml
 README.md
 ```
 
-## Start the project
+# Running Services
 
-```
-docker compose up -d --build
-```
+NGINX - Port 80
+fastAPI - Port 8000
+PostgreSQL - Port 5432
+Redis - Port 6379
 
-To stop the project
-
-```
-docker compose down
-```
-
-Check running containers
-
-```
-docker ps
-```
-
-## Running Services
-
-- NGINX - Port 80
-- FastAPI - Port 8000
-- PostgreSQL - Port 5432
-- Redis - Port 6379
-
-## Health Check
+# Health Check
 
 ```
 http://13.235.115.18/health
 ```
 
-Expected response
+response
 
 ```json
 {
@@ -62,3 +44,14 @@ Expected response
   "redis": "connected"
 }
 ```
+
+# SSL
+
+This project is deployed using the EC2's elastic public IP, so HTTPS is not configured yet but we can use certbot as ssl certificate provider
+and link our domain to our elastic IP
+
+# Restart Strategy
+
+Docker Compose is configured with restart: always, so containers restart automatically
+
+Database data is stored in a Docker volume
