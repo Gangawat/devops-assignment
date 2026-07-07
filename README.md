@@ -54,4 +54,4 @@ and link our domain to our elastic IP
 
 Docker Compose is configured with restart: always, so containers restart automatically
 
-Database data is stored in a Docker volume
+Database is stored in a Docker volume
