@@ -32,7 +32,7 @@ Redis - Port 6379
 # Health Check
 
 ```
-http://13.235.115.18/health
+http://13.205.69.17/health
 ```
 
 response
